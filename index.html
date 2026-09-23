@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JONG — Data Analyst Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBFAF7;
+    --paper-line:#DEDAD0;
+    --ink:#1A1D1B;
+    --ink-soft:#54574F;
+    --ledger:#1F4D3D;
+    --ledger-soft:#E7EEE9;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;background:var(--paper);color:var(--ink);}
+  body{
+    font-family:'Inter',sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:72px 24px 120px;
+  }
+  header.masthead{
+    border-bottom:2px solid var(--ink);
+    padding-bottom:28px;
+    margin-bottom:40px;
+  }
+  h1{
+    font-family:'Source Serif 4',serif;
+    font-weight:700;
+    font-size:2.6rem;
+    letter-spacing:-0.01em;
+    margin:0 0 6px;
+  }
+  .role-line{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.95rem;
+    color:var(--ledger);
+    margin:0 0 18px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+  }
+  .contact-row a{color:var(--ink-soft);text-decoration:none;border-bottom:1px solid var(--paper-line);}
+  .contact-row a:hover{color:var(--ledger);border-color:var(--ledger);}
+
+  section{margin-bottom:52px;}
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    letter-spacing:0.04em;
+    color:var(--ink-soft);
+    border-bottom:1px solid var(--paper-line);
+    padding-bottom:8px;
+    margin-bottom:20px;
+  }
+  p.lede{
+    font-size:1.05rem;
+    color:var(--ink);
+    max-width:640px;
+  }
+
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px 32px;
+    font-size:0.95rem;
+  }
+  .skills-grid dt{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+    margin-bottom:2px;
+  }
+  .skills-grid dd{margin:0;}
+
+  .project{
+    border:1px solid var(--paper-line);
+    border-left:3px solid var(--ledger);
+    padding:24px 26px;
+    margin-bottom:24px;
+    background:#fff;
+  }
+  .project h3{
+    font-family:'Source Serif 4',serif;
+    font-size:1.3rem;
+    margin:0 0 4px;
+  }
+  .project .tagline{
+    color:var(--ink-soft);
+    font-size:0.92rem;
+    margin-bottom:14px;
+  }
+  .project p{margin:0 0 12px;}
+  .metrics{
+    display:flex;
+    flex-wrap:wrap;
+    gap:0;
+    border-top:1px solid var(--paper-line);
+    border-bottom:1px solid var(--paper-line);
+    margin:16px 0;
+  }
+  .metric{
+    flex:1 1 140px;
+    padding:10px 14px 10px 0;
+    border-right:1px solid var(--paper-line);
+  }
+  .metric:last-child{border-right:none;}
+  .metric .num{
+    display:block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:1.05rem;
+    color:var(--ledger);
+  }
+  .metric .lbl{
+    display:block;
+    font-size:0.76rem;
+    color:var(--ink-soft);
+    margin-top:2px;
+  }
+  .project ul{margin:0 0 14px;padding-left:20px;}
+  .project li{margin-bottom:6px;font-size:0.96rem;}
+  .repo-link{
+    display:inline-block;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.86rem;
+    color:var(--ledger);
+    text-decoration:none;
+    border-bottom:1px solid var(--ledger);
+  }
+  .repo-link:hover{opacity:0.7;}
+
+  .role{margin-bottom:26px;}
+  .role .role-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:4px;
+  }
+  .role h3{
+    font-family:'Source Serif 4',serif;
+    font-size:1.1rem;
+    margin:0;
+  }
+  .role .dates{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+  }
+  .role .org{
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    margin-bottom:8px;
+  }
+  .role ul{margin:0;padding-left:20px;}
+  .role li{margin-bottom:5px;font-size:0.96rem;}
+
+  footer{
+    border-top:2px solid var(--ink);
+    padding-top:24px;
+    font-size:0.88rem;
+    color:var(--ink-soft);
+  }
+
+  .note{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:0.76rem;
+    color:#B0862F;
+    background:#FBF3E1;
+    border:1px solid #E9D8AE;
+    padding:10px 14px;
+    margin-bottom:40px;
+  }
+
+  @media (max-width:560px){
+    .wrap{padding:44px 18px 90px;}
+    h1{font-size:2.1rem;}
+    .skills-grid{grid-template-columns:1fr;}
+    .metric{flex:1 1 45%;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <h1>JONG</h1>
+    <p class="role-line">Data Analyst — Systems Background in Banking / Independent Quant Systems Developer</p>
+    <div class="contact-row">
+      <a href="mailto:1908hanjm@gmail.com">1908hanjm@gmail.com</a>
+      <a href="https://github.com/1908hanjm">github.com/1908hanjm</a>
+      <a href="[https://www.linkedin.com/in/jong-min-han-311ba9123/]">LinkedIn</a>
+      <span>Oakville, Ontario, Canada</span>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-label">Summary</div>
+    <p class="lede">
+      Data analyst with a systems background in banking IT and three years of independent, self-taught
+      work building and operating live algorithmic trading systems. Comfortable moving between
+      long-horizon quantitative research (multi-year backtests, hypothesis testing, statistical
+      validation) and production systems work (real-time execution, incident diagnosis, root-cause
+      analysis from logs). Self-taught through direct, iterative work with real capital and real data —
+      not coursework.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-label">Skills</div>
+    <dl class="skills-grid">
+      <div><dt>Languages</dt><dd>Python, C#, SQL, VBA</dd></div>
+      <div><dt>Analysis</dt><dd>Backtesting, statistical validation, time-series analysis, cross-validation</dd></div>
+      <div><dt>Tools</dt><dd>SQLite, Excel, Git / GitHub, Visual Studio</dd></div>
+      <div><dt>Domain</dt><dd>Financial market data, trading systems, banking systems / IT operations</dd></div>
+    </dl>
+  </section>
+
+  <section>
+    <div class="section-label">Featured Projects</div>
+
+    <div class="project">
+      <h3>KODEX200 Band Strategy — Redesign from 6.6 Years of Live Trading Data</h3>
+      <div class="tagline">Backtesting &amp; hypothesis validation · Python / SQL</div>
+      <p>
+        Analyzed 943 days of live trading history to explain a persistent performance ceiling in an
+        existing band-trading system. Tested and rejected an initial hypothesis (forced-sale "chain
+        trading") after quantifying its structural losses, then traced the real cause to capital
+        allocation rather than band width — and used that finding to redesign the strategy's parameters.
+      </p>
+      <div class="metrics">
+        <div class="metric"><span class="num">6.6 yrs</span><span class="lbl">live data analyzed</span></div>
+        <div class="metric"><span class="num">−3.9%</span><span class="lbl">legacy system return</span></div>
+        <div class="metric"><span class="num">+9.7%</span><span class="lbl">buy-and-hold benchmark</span></div>
+        <div class="metric"><span class="num">−30.6%</span><span class="lbl">legacy max drawdown</span></div>
+      </div>
+      <ul>
+        <li>Rejected a self-proposed strategy ("chain trading") after backtests showed it was structurally loss-making — documented why, not just that it failed</li>
+        <li>Identified the true constraint (capital exhaustion in down markets, not band width) using full-history simulation</li>
+        <li>Re-derived band-width rule from fixed-amount to price-relative percentage after testing across 24 years of daily data</li>
+        <li>Cross-validated the final design against an independent AI review before implementation</li>
+      </ul>
+      <a class="repo-link" href="https://github.com/1908hanjm/kodex200-trading">github.com/1908hanjm/kodex200-trading →</a>
+    </div>
+
+    <div class="project">
+      <h3>QQQ / Interactive Brokers — Live Trading System &amp; Incident Diagnosis</h3>
+      <div class="tagline">Production systems analysis · C# / IBKR API / SQLite</div>
+      <p>
+        Operate a live automated trading system on Interactive Brokers, including root-cause diagnosis
+        of production incidents from timestamped logs — the same skill set as troubleshooting a banking
+        transaction system: reconstruct an event sequence, isolate the failure point, verify the fix
+        against the next live session.
+      </p>
+      <ul>
+        <li>Diagnosed a stale-price bug causing repeated order rejections by tracing IBKR error codes back to a static database value used in place of a live tick</li>
+        <li>Found and fixed a currency-settlement timing issue (USD/CAD) that was blocking valid buy orders for a full trading day</li>
+        <li>Built a session-recovery safeguard after tracing an unrecoverable state to a single un-reset flag from a prior incident</li>
+      </ul>
+      <a class="repo-link" href="https://github.com/1908hanjm/qqq-ibkr-trading">github.com/1908hanjm/qqq-ibkr-trading →</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Experience</div>
+
+    <div class="role">
+      <div class="role-head">
+        <h3>Independent Systems Developer &amp; Analyst — Algorithmic Trading</h3>
+        <span class="dates">Mar 2023 – Present</span>
+      </div>
+      <div class="org">Self-directed</div>
+      <ul>
+        <li>Designed, built, and operate two live automated trading systems (C#, SQLite, brokerage APIs)</li>
+        <li>Self-taught end-to-end: architecture, real-time execution logic, log-based debugging, and quantitative strategy validation</li>
+      </ul>
+    </div>
+
+    <div class="role">
+      <div class="role-head">
+        <h3>[Banking Systems / IT Programer]</h3>
+        <span class="dates">[1991 – 2007]</span>
+      </div>
+      <div class="org">[KB Data System]</div>
+      <ul>
+        <li>[Bank CRM]</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    JONG · Oakville, ON · <a href="mailto:1908hanjm@gmail.com" style="color:var(--ink-soft);">1908hanjm@gmail.com</a>
+  </footer>
+
+</div>
+</body>
+</html>
